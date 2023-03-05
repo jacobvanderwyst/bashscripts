@@ -1,3 +1,5 @@
+#the following command must be used to allow execution of the script
+#Set-ExecutionPolicy RemoteSigned
 # Install Python
 Write-Host "Installing Python..."
 Start-Process -FilePath "https://www.python.org/ftp/python/3.12.0/python-3.12.0a5.exe" -ArgumentList "/quiet", "InstallAllUsers=1", "PrependPath=1" -Wait
@@ -24,3 +26,6 @@ Write-Host "Cleaning up..."
 Remove-Item "daq-2.0.7.tar.gz" -Force
 Remove-Item "snort-2.9.20.tar.gz" -Force
 Remove-Item -Recurse ".\Snort" -Force
+
+#disabling script execution
+Set-ExecutionPolicy Restricted
