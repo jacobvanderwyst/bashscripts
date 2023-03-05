@@ -5,4 +5,4 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # Install Python, Git, Snort, and UFW
-sudo apt-get install -y python git snort ufw
+sudo apt-get install -y python snort ufw
