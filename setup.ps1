@@ -4,7 +4,7 @@
 
 # Install Python
 Write-Host "Installing Python..."
-Start-Process -FilePath "https://www.python.org/ftp/python/3.12.0/python-3.12.0a5.exe" -ArgumentList "/quiet", "InstallAllUsers=1", "PrependPath=1" -Wait
+#Start-Process -FilePath "https://www.python.org/ftp/python/3.12.0/python-3.12.0a5.exe" -ArgumentList "/quiet", "InstallAllUsers=1", "PrependPath=1" -Wait
 
 # Install Snort
 Write-Host "Installing Snort..."
