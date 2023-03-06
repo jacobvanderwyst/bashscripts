@@ -1,9 +1,11 @@
+
 import os
 import platform as plt
 import random as rand
 import pyautogui as pyag
 from keyboard import press
 import time
+
 
 opsys=plt.system()
 oprelease=plt.release()
@@ -67,7 +69,8 @@ def createPW(length, username):
 def win():
     pwfile=open("pwfile.txt",'r')
     users=getUser()
-    
+    print(users)
+    print("changing passsword...")
     while users:
         passWD=createPW(12,users)
         os.system(f"net user {users} {passWD}")
@@ -102,8 +105,11 @@ def ubun():
 
 #DO
 if opsys =="Linux":
+    print("Linux")
     lin()
 elif opsys=="Windows":
+    print("windows")
     win()
 elif opsys=="Ubuntu":
+    print("Ubuntu")
     ubun()
