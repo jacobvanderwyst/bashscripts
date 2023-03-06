@@ -7,6 +7,10 @@ Write-Host "Installing Python..."
 Invoke-WebRequest -Uri "https://www.python.org/ftp/python/3.12.0/python-3.12.0a5.exe" -OutFile "~/downloads/python-3.12.0a5.exe" -UserAgent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36"
 ~\downloads\python-3.12.0a5.exe
 Read-Host -Prompt "Press any key to continue..."
+setx PATH "~\AppData\Local\Programs\Python\Python312-32"
+py -m pip install --upgrade pip setuptools wheel
+py -m pip install pyautogui
+py -m pip install keyboard
 
 # Install Snort
 Write-Host "Installing Snort..."
