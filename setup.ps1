@@ -1,6 +1,6 @@
 #the following command must be used to allow execution of the script
 #Set-ExecutionPolicy RemoteSigned
-#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
+#Token for repo if needed can be found elsewhere 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
 
 # Install Python
 Write-Host "Installing Python..."
