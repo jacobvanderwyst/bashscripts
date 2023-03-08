@@ -67,7 +67,7 @@ Write-Host "Finding Competition IP's / Edron SaaS"
 #$home\desktop\masscan64.exe 10.65.0.0/16 --ports 0-65535
 Read-Host -Prompt "Press any key to continue..."
 
-Write-Host "Adjacent to Cloud private"
+Write-Host "Adjacent to Cloud private, this is firewall"
 .\$home\desktop\masscan64.exe 172.16.32.254 --ports 0-65535
 #$home\desktop\masscan64.exe 172.16.32.254 --ports 0-65535
 Read-Host -Prompt "Press any key to continue..."
@@ -86,6 +86,27 @@ Write-Host "Office Servers"
 .\$home\desktop\masscan64.exe 192.168.100.0/24 --ports 0-65535
 #$home\desktop\masscan64.exe 192.168.100.0/24 --ports 0-65535
 Read-Host -Prompt "Press any key to continue..."
+
+#Configuring Basic Firewall Rules
+#netsh advfirewall firewall add rule name="All ICMP V4 BLOCK" dir=in action=block protocol=icmpv4
+Write-Host "Configuring Firewall Rules"
+#netsh advfirewall firewall set rule group="remote administration" new enable=No
+netsh advfirewall firewall set rule group="remote desktop" new enable=No
+
+netsh advfirewall set allprofiles state on
+
+Write-Host "Dumping rules to Desktop"
+netsh advfirewall firewall show rule name=all > $home\Desktop\firewallrules.txt
+
+Write-Host "Enabling and Updating AV"
+#Check if AV is enabled and Update
+$avstate=Get-MpComputerStatus | findstr "AntivirusEnabled"
+if [/I] $avstate == "AntivirusEnabled                 : False" Set-MpPreference -AntivirusEnabled $true
+Update-MpSignature
+
+#Configuring Basic Snort Rules
+Write-Host "Configuring Snort Rules"
+
 
 #Disabling script execution
 Write-Host "Disabling script execution..."
