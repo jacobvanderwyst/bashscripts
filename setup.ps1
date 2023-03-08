@@ -1,6 +1,5 @@
 #the following command must be used to allow execution of the script
 #Set-ExecutionPolicy RemoteSigned
-#Token for repo if needed can be found elsewhere 
 
 Write-Host "If EXE's fail use ~\downloads\ This could happen depending on windows version and whether you are using powershell or CMD"
 
@@ -15,9 +14,11 @@ setx PATH "~\AppData\Local\Programs\Python\Python312-32"
 py -m pip install --upgrade pip setuptools wheel
 py -m pip install pyautogui
 py -m pip install keyboard
+Read-Host -Prompt "Press any key to continue..."
 
 # Install masscan for windows
 git clone https://github.com/Arryboom/MasscanForWindows.git ~/desktop
+Read-Host -Prompt "Press any key to continue..."
 
 # Install Snort
 Write-Host "Installing Snort..."
@@ -59,18 +60,27 @@ Remove-Item "~/downloads/Wireshark-win64-4.0.4.exe" -Force
 Write-Host "Finding Competition IP's / Edron SaaS"
 .\~\desktop\masscan64.exe 10.65.0.0/16 --ports 0-65535 
 #~\desktop\masscan64.exe 10.65.0.0/16 --ports 0-65535
+Read-Host -Prompt "Press any key to continue..."
+
 Write-Host "Adjacent to Cloud private"
 .\~\desktop\masscan64.exe 172.16.32.254 --ports 0-65535
 #~\desktop\masscan64.exe 172.16.32.254 --ports 0-65535
+Read-Host -Prompt "Press any key to continue..."
+
 Write-Host "Cloud private"
 .\~\desktop\masscan64.exe 192.168.255.1 --ports 0-65535
 #~\desktop\masscan64.exe 192.168.255.1 --ports 0-65535
+Read-Host -Prompt "Press any key to continue..."
+
 Write-Host "Office Workstations"
 .\~\desktop\masscan64.exe 192.168.1.0/24 --ports 0-65535
 #~\desktop\masscan64.exe 192.168.1.0/24 --ports 0-65535
+Read-Host -Prompt "Press any key to continue..."
+
 Write-Host "Office Servers"
 .\~\desktop\masscan64.exe 192.168.100.0/24 --ports 0-65535
 #~\desktop\masscan64.exe 192.168.100.0/24 --ports 0-65535
+Read-Host -Prompt "Press any key to continue..."
 
 #Disabling script execution
 Write-Host "Disabling script execution..."
