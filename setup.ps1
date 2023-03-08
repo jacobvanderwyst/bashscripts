@@ -1,8 +1,8 @@
 #the following command must be used to allow execution of the script
 #Set-ExecutionPolicy RemoteSigned
-#Token for repo if needed can be found elsewhere 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
+#Token for repo if needed can be found elsewhere 
 
-Write-Host "If EXE's fail use ~\downloads\"
+Write-Host "If EXE's fail use ~\downloads\ This could happen depending on windows version and whether you are using powershell or CMD"
 
 # Install Python
 Write-Host "Installing Python..."
@@ -58,14 +58,19 @@ Remove-Item "~/downloads/Wireshark-win64-4.0.4.exe" -Force
 #Running wide MassScan
 Write-Host "Finding Competition IP's / Edron SaaS"
 .\~\desktop\masscan64.exe 10.65.0.0/16 --ports 0-65535 
+#~\desktop\masscan64.exe 10.65.0.0/16 --ports 0-65535
 Write-Host "Adjacent to Cloud private"
 .\~\desktop\masscan64.exe 172.16.32.254 --ports 0-65535
+#~\desktop\masscan64.exe 172.16.32.254 --ports 0-65535
 Write-Host "Cloud private"
 .\~\desktop\masscan64.exe 192.168.255.1 --ports 0-65535
+#~\desktop\masscan64.exe 192.168.255.1 --ports 0-65535
 Write-Host "Office Workstations"
 .\~\desktop\masscan64.exe 192.168.1.0/24 --ports 0-65535
+#~\desktop\masscan64.exe 192.168.1.0/24 --ports 0-65535
 Write-Host "Office Servers"
 .\~\desktop\masscan64.exe 192.168.100.0/24 --ports 0-65535
+#~\desktop\masscan64.exe 192.168.100.0/24 --ports 0-65535
 
 #Disabling script execution
 Write-Host "Disabling script execution..."
