@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get upgrade
 
 # Install Python, Git, Snort, and UFW
-sudo apt-get install -y python snort ufw masscan
+sudo apt-get install -y python snort ufw masscan net-tools
 pip install pyautogui keyboard
 
 #Running wide MassScan
