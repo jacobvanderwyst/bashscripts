@@ -71,16 +71,18 @@ def win():
     users=getUser()
     print(users)
     print("changing passsword...")
-    while users:
+    i=0
+    while i<len(users):
         passWD=createPW(12,users)
         os.system(f"net user {users} {passWD}")
         press("enter")
+        i+=1
     pwfile.close()
 def lin():
     pwfile=open("pwfile.txt",'r')
     users=getUser()
-    
-    while users:
+    i=0
+    while i<len(users):
         passWD=createPW(12,users)
         os.system(f"sudo passwd {users}")
         press("enter")
@@ -88,12 +90,13 @@ def lin():
         time.sleep(10)
         pyag.write(passWD)
         press("enter")
+        i+=1
     pwfile.close()
 def ubun():
     pwfile=open("pwfile.txt",'r')
     users=getUser()
-    
-    while users:
+    i=0
+    while i<len(users):
         passWD=createPW(12,users)
         os.system(f"sudo passwd {users}")
         press("enter")
@@ -101,6 +104,7 @@ def ubun():
         time.sleep(10)
         pyag.write(passWD)
         press("enter")
+        i+=1
     pwfile.close()
 
 #DO
