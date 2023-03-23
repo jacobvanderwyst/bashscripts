@@ -1,4 +1,4 @@
-echo "ENTER ROOT password (should be kali if on a VM)"
+echo "ENTER ROOT password (should be kali if on a fresh kali VM)"
 read rootpw
 su 
 $rootpw
